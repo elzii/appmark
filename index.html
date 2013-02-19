@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Appmark</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/screen.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+
+    <!-- Fav and touch icons -->
+	  <link rel="shortcut icon" href="img/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Appmark</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Generator</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div id="page-wrap" class="container">
+<!-- 
+      <h1>appmark</h1>
+      <p>A tool to create a chrome extension that acts as a bookmark to a website.</p>
+ -->
+  
+
+    <div id="banner" class="hero-unit">
+      <h1><img src="img/appmark-star.png" alt="Appmark">Appmark</h1>
+      <p>A tool to generate an "appmark" - a chrome extension serving as a bookmark to a website/app that displays on Chrome's New Tab page.</p>
+      <ul>Appmark uses
+        <li><a href="http://jquery.com/" target="_blank">jQuery</a>, </li>
+        <li><a href="http://stuk.github.com/jszip/" target="_blank">jsZip</a>, &amp; </li>
+        <li><a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a></li>
+      </ul>
+      <p><a href="#" id="create-appmark" class="btn btn-primary btn-large">Make an Appmark »</a></p>
+    </div>
+
+
+
+
+    <div id="content-wrap" class="row">
+
+
+      <div id="content-left" class="span4">
+
+        <h1 class="bl">Appmark Generator</h1>
+
+        <h3 class="bb">1. Choose PNG to use as icon.</h3>
+        <form id="b64upl" action="">
+          <div class="upload">
+              <div class="file-preview"></div>
+              <label>
+                Select a PNG file. Preferred dimensions are <b>128x128</b> pixels. 
+                This will be the icon for the appmark.
+              </label>
+              <input type="file" name="input_name" id="file" class="hide ie_show" />
+              <div class="input-append ie_hide">
+                <input id="pretty-input" class="input-large" type="text" onclick="$('input[id=file]').click();">
+                <a class="btn" onclick="$('input[id=file]').click();">Browse</a>
+              </div>
+          </div>
+        </form>      
+
+        <div class="appmark-details">
+          <h3 class="bb">2. Appmark Details</h3>
+          <ul id="appmark-details">
+            <li>
+              <label for="input-manifest-name">Name</label>
+              <input type="text" class="input-manifest" id="input-manifest-name">
+            </li>
+            <li>
+              <label for="input-manifest-desc">Description</label>
+              <input type="text" class="input-manifest" id="input-manifest-desc">
+            </li>
+            <li>
+              <label for="input-manifest-url">URL</label>
+              <input type="text" class="input-manifest" id="input-manifest-url">
+            </li>
+          </ul>
+        </div>
+        
+
+        <h3 class="bb">3. Download Zip</h3>
+        <a class="btn btn-primary btn-large" onclick="create_zip()">Create Zip</a>
+
+
+      </div><!-- /#content-left -->
+
+
+
+
+
+
+
+
+
+
+
+      <div id="content-mid" class="span4">
+
+        <h1 class="rl">Outputs</h1>
+
+
+        <div class="output-base64">
+          <h3 class="bb">Image to Base64 <span class="selectall">Select All</span> </h3>
+          <pre id="output-pre-base64"></pre>
+        </div>
+
+
+        <div class="output-manifest">
+          <h3 class="bb">Generated <i class="g">manifest.json</i></h3>
+
+          <div class="syntax" id="output-pre-manifest">{
+ "manifest_version": 2,
+ "name"<i class="w">:</i> "<i id="output-manifest-name" class="y">Example Website Name</i>",
+ "description"<i class="w">:</i> "<i id="output-manifest-desc" class="y">Appmark link to Example Site.</i>",
+ "version"<i class="w">:</i> "1.0",
+ "icons"<i class="w">:</i> {"128"<i class="w">:</i> "appmarkicon.png"},
+ "app"<i class="w">:</i> {
+   "urls"<i class="w">:</i> ["<i id="output-manifest-url"class="y">http://examplesite.org</i>"],
+   "launch"<i class="w">:</i> {"web_url"<i class="w">:</i> "<i id="output-manifest-url-alt"class="y">http://examplesite.org</i>"}
+ },
+   "permissions"<i class="w">:</i> [
+     "unlimitedStorage",
+     "notifications"
+ ]
+}
+</div>
+
+        </div>
+
+      </div><!-- /#content-mid -->
+     
+
+
+
+      <div id="content-right" class="span4">
+        
+        <h1 class="tan">Instructions</h1>  
+
+        <div class="steps">
+          <h4>Step 1</h4>
+          <p>Upload an icon and specify the name, description, and url for the website you want to make an "appmark" to.</p>
+
+          <h4>Step 2</h4>
+          <p>Download the generated .zip file (default is download.zip) and extract it to a new folder.</p>
+
+          <h4>Step 3</h4>
+          <p>In Chrome Settings, go to <b>Tools » Extensions</b> or navigate to <a href="chrome://extensions/">chrome://extensions</a>. In the top right, 
+            toggle <b>Developer Mode</b> to turn it on. </p>
+
+          <h4>Step 4</h4>
+          <p>
+            Click the newly revealed <b>Load Unpacked Extension</b> button (shown below) and select the folder you unzipped download.zip to.
+          </p>
+          <img class="step-img" src="img/load-extension.png" alt="Load Unpacked Extension"/>
+          <p>Voila. Check your New Tab page for the Appmark.</p>
+        </div>
+
+      </div><!-- /#content-right -->
+
+    </div><!-- /content-wrap -->  
+  </div> <!-- /container -->
+
+
+
+<div id="footer">
+  <div class="container">
+    
+    <div class="row">
+      <div class="span6">
+        <h1>About</h1><a name="about"></a>
+        <p>
+          Appmark was made in a bored afternoon after looking for a solution to organize clutter of my bookmark bar. Alternate "New Tab" 
+          extensions did not appeal to me, but custom tailoring some icons and using them as shortcuts to frequently used sites really looked great,
+          and I wanted a way for others to do the same, regardless of experience level.
+        </p>
+        <p>
+          If you like tools like this, check out another site of mine at <a href="http://nerdi.net">nerdi.net</a>.
+        </p>
+      </div>
+      <div class="span6">
+        <h1>Contact</h1><a name="contact"></a>
+        <p>Email an email to <a href="mailto:elzi@nerdi.net">elzi at nerdi dot net</a>, or find me on twitter <a href="http://twitter.com/lziz">@lziz</a>.</p>
+      </div>
+
+      <div style="clear:both"></div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jszip.js"></script>
+    <script src="js/json2.js"></script> 
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+    <script type="text/javascript">
+    $('input[type=file]').change(function(e) {
+
+        //clear pre text
+        $('#output-pre-base64').text('Cleared');
+
+        //Prettify fakepath stuff
+        $('#pretty-input').val($(this).val().replace("C:\\fakepath\\", ""));
+
+        //Preview in base64
+        if(typeof FileReader == "undefined") return true;
+
+        var elem = $(this);
+        var files = e.target.files;
+
+        for (var i=0, file; file=files[i]; i++) {
+            if (file.type.match('image.*')) {
+                var reader = new FileReader();
+                reader.onload = (function(theFile) {
+                    return function(e) {
+                        // append image as background in preview container
+                        var image         = e.target.result,
+                            imageStripped = image.slice(22,-1);
+                        previewDiv = $('.file-preview', elem.parent());
+                        bgWidth = previewDiv.width();
+                        previewDiv.css({
+                            "background-size":bgWidth + "px, auto",
+                            "background-position":"50%, 50%",
+                            "background-image":"url("+image+")",
+                        });
+
+                        // Output b64 to pre in debug column
+                        $('#output-pre-base64').text(imageStripped);
+                    };
+                })(file);
+                reader.readAsDataURL(file);
+            }
+        }
+    });    
+    </script>
+  
+    <script>
+    $('.input-manifest').change(function(e) {
+      var thisText    = $(this).val(),
+          thisID      = $(this).attr('id'),
+          thisName    = thisID.split("-")[2],
+          thisOutput  = 'output-manifest-'+thisName;
+
+      console.log(thisID);
+      console.log(thisName);
+
+      $('#'+thisOutput).text(thisText);
+
+      //temp solution to fix 2nd url
+      if (thisID == 'input-manifest-url') {
+        $('#output-manifest-url-alt').text($('#input-manifest-url').val());
+      }
+      
+    });
+    </script>
+
+
+
+    <script type="text/javascript">
+      function SelectText(element) {
+          var doc = document
+              , text = doc.getElementById(element)
+              , range, selection
+          ;    
+          if (doc.body.createTextRange) {
+              range = document.body.createTextRange();
+              range.moveToElementText(text);
+              range.select();
+          } else if (window.getSelection) {
+              selection = window.getSelection();        
+              range = document.createRange();
+              range.selectNodeContents(text);
+              selection.removeAllRanges();
+              selection.addRange(range);
+          }
+      }
+    </script>
+
+
+
+    <script>    
+    function create_zip() {
+      var zip             = new JSZip(),
+          fileText        = $('.syntax').text(),
+          fileTextTrim    = $.trim(fileText),
+          imgData         = $('#output-pre-base64').text();
+
+      zip.file("manifest.json", fileTextTrim);
+
+      // var img = zip.folder("images");
+      zip.file("appmarkicon.png", imgData, {base64: true});
+
+      var content = zip.generate();
+      location.href = "data:application/zip;base64," + content;
+
+    }
+    </script>
+
+
+
+    <script>
+      jQuery(document).ready(function($) {
+        //select all contents of <pre>
+        $('span.selectall').click(function() {
+            SelectText('output-pre-base64');
+        });
+
+        //show fakepath on prettified file input
+        $('input[id=file]').change(function() {
+          $('#pretty-input').val($(this).val().replace("C:\\fakepath\\", ""));
+        });
+
+        //scroll to step 1 and focus field
+        $('#create-appmark').click(function(){
+          $("html, body").animate({ scrollTop: 280 }, 300);
+          $('#pretty-input').focus();
+          return false;
+        })
+      });
+    </script>
+
+
+  </body>
+</html>

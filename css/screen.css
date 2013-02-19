@@ -1,0 +1,259 @@
+/* 
+	appmark - styles
+*/
+/* COLORS
+================================================== */
+/* DEFAULTS & MOD CLASSES
+================================================== */
+/* line 17, ../sass/screen.scss */
+.bb {
+  padding-bottom: 7px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-bottom: 1px solid #d1d1d1;
+  font-size: 19px;
+  line-height: 1.1;
+}
+
+/* line 18, ../sass/screen.scss */
+span.selectall {
+  float: right;
+  font-size: 13px;
+  color: #5a5a5a;
+  cursor: pointer;
+  padding: 3px 3px 0 0;
+}
+
+/* line 19, ../sass/screen.scss */
+h1 {
+  font-size: 28px;
+}
+
+/* line 20, ../sass/screen.scss */
+h1.bl {
+  color: #487b7f;
+}
+
+/* line 21, ../sass/screen.scss */
+h1.bd {
+  color: #011d24;
+}
+
+/* line 22, ../sass/screen.scss */
+h1.rl {
+  color: #aa2c30;
+}
+
+/* line 23, ../sass/screen.scss */
+h1.rd {
+  color: #580022;
+}
+
+/* line 24, ../sass/screen.scss */
+h1.tan {
+  color: #ffbe8d;
+}
+
+/* line 25, ../sass/screen.scss */
+input.input-big {
+  width: 90%;
+}
+
+/* line 26, ../sass/screen.scss */
+label {
+  font-size: 13px;
+}
+
+/* line 28, ../sass/screen.scss */
+ul {
+  list-style-type: none;
+  margin: 15px 0 0 0;
+}
+
+/* line 29, ../sass/screen.scss */
+ul li label {
+  float: left;
+  width: 30%;
+}
+
+/* line 30, ../sass/screen.scss */
+ul li input {
+  width: 60%;
+}
+
+/* line 32, ../sass/screen.scss */
+#pretty-input {
+  width: 125px;
+}
+
+/* line 34, ../sass/screen.scss */
+pre#output-pre-base64 {
+  height: 116px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+/* BOOTSTRAP OVERRIDES
+================================================== */
+/* line 39, ../sass/screen.scss */
+#content-wrap.row {
+  padding-top: 10px;
+}
+
+/* line 40, ../sass/screen.scss */
+#page-wrap {
+  padding-top: 45px;
+}
+
+/* line 41, ../sass/screen.scss */
+h1 {
+  padding-bottom: 0px;
+}
+
+/* line 42, ../sass/screen.scss */
+.hero-unit {
+  margin-top: 15px;
+}
+
+/* upload form
+================================================== */
+/* line 51, ../sass/screen.scss */
+form#b64upl div.upload {
+  overflow: hidden;
+}
+/* line 54, ../sass/screen.scss */
+form#b64upl div.upload label {
+  color: #7a7a7a;
+  display: block;
+  margin: 5px 0 15px 0;
+}
+/* line 56, ../sass/screen.scss */
+form#b64upl div.upload div.file-preview {
+  background: url(../img/filetype-png.png) no-repeat 0px 0px;
+  background-size: 90% auto;
+  border: 0px solid black;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  width: 128px;
+  height: 128px;
+  text-align: center;
+}
+/* line 68, ../sass/screen.scss */
+form#b64upl div.upload input[type="file"] {
+  line-height: 1;
+}
+
+/* #banner    .hero-unit
+================================================== */
+/* line 74, ../sass/screen.scss */
+#banner {
+  padding: 25px 35px;
+}
+/* line 77, ../sass/screen.scss */
+#banner h1 {
+  position: relative;
+  color: #3b464b;
+  display: block;
+  padding-left: 70px;
+}
+/* line 83, ../sass/screen.scss */
+#banner h1 img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+/* line 88, ../sass/screen.scss */
+#banner p {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+/* line 90, ../sass/screen.scss */
+#banner ul {
+  margin: 0;
+}
+/* line 93, ../sass/screen.scss */
+#banner ul li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+/* #content-left    .span6
+================================================== */
+/* line 101, ../sass/screen.scss */
+.appmark-details {
+  padding-top: 5px;
+}
+
+/* #content-mid   .span6
+================================================== */
+/* line 109, ../sass/screen.scss */
+.output-base64 {
+  padding-bottom: 5px;
+}
+
+/* SYNTAX */
+/* line 118, ../sass/screen.scss */
+.output-manifest i.g {
+  color: #666;
+  font-style: normal;
+}
+/* line 120, ../sass/screen.scss */
+.output-manifest .syntax {
+  padding: 10px;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: 12px;
+  background: #272822;
+  color: #c4cfc3;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+/* line 127, ../sass/screen.scss */
+.output-manifest .syntax i.w {
+  color: #fff;
+  font-style: normal;
+}
+/* line 128, ../sass/screen.scss */
+.output-manifest .syntax i.y {
+  color: #e5db82;
+  font-style: normal;
+}
+
+/* #content-right    .span6
+================================================== */
+/* line 136, ../sass/screen.scss */
+.steps {
+  margin-left: 0px;
+}
+
+/* line 137, ../sass/screen.scss */
+.step-img {
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid #c1c1c1;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* FOOTER
+================================================== */
+/* line 147, ../sass/screen.scss */
+#footer {
+  height: auto;
+  margin-top: 80px;
+  background-color: #f5f5f5;
+  padding-top: 15px;
+  padding-bottom: 25px;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  /* line 156, ../sass/screen.scss */
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

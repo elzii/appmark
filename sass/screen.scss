@@ -1,0 +1,163 @@
+/* 
+	appmark - styles
+*/
+
+/* COLORS
+================================================== */
+$blue-light: 		#487B7F;
+$blue-dark: 		#011D24;
+$red-light: 		#AA2C30;
+$red-dark: 			#580022;
+$tan: 				#FFBE8D;
+
+
+/* DEFAULTS & MOD CLASSES
+================================================== */
+body 			{}
+.bb   			{padding-bottom:7px;margin-bottom:20px;margin-top:20px;border-bottom:1px solid #d1d1d1;font-size:19px;line-height:1.1;}
+span.selectall 	{float:right;font-size:13px;color:#5a5a5a;cursor:pointer;padding:3px 3px 0 0;}
+h1 				{font-size:28px;}
+h1.bl 			{color:$blue-light;}
+h1.bd 			{color:$blue-dark;}
+h1.rl 			{color:$red-light;}
+h1.rd 			{color:$red-dark;}
+h1.tan  		{color:$tan;}
+input.input-big {width:90%;}
+label 			{font-size:13px;}
+
+ul              {list-style-type:none;margin:15px 0 0 0;}
+ul li label     {float:left;width:30%;}
+ul li input     {width:60%;}
+
+#pretty-input   {width: 125px;}
+
+pre#output-pre-base64 	{height:116px;overflow-y:scroll;padding:10px;}
+
+
+/* BOOTSTRAP OVERRIDES
+================================================== */
+#content-wrap.row 		{padding-top:10px;}
+#page-wrap 				{padding-top:45px;}
+h1 						{padding-bottom:0px;}
+.hero-unit 				{margin-top:15px;}
+
+
+
+
+
+/* upload form
+================================================== */
+form#b64upl {
+	div.upload { 
+		overflow:hidden;
+		
+		label { color:#7a7a7a; display:block; margin:5px 0 15px 0; }
+
+		div.file-preview {
+		    background:url(../img/filetype-png.png) no-repeat 0px 0px;
+		    background-size:90% auto;
+		    border:0px solid #000;
+		    display:inline-block;
+		    float:left;
+		    margin-right:10px;
+		    width:128px;
+		    height:128px;
+		    text-align:center;
+		}
+
+		input[type="file"] {line-height:1;}
+ 	}
+}
+
+/* #banner    .hero-unit
+================================================== */
+#banner {
+	padding:25px 35px;
+
+	h1 {
+		position:relative;
+		color:#3b464b;
+		display:block;
+		padding-left:70px;
+
+		img {
+			position:absolute;
+			left:0px;top:0px;
+		}
+	}
+	p {margin-top:10px;margin-bottom:0px;}
+
+	ul {
+		margin:0;
+
+		li {display: inline-block;zoom: 1;*display: inline;}
+	}
+}
+
+/* #content-left    .span6
+================================================== */
+
+
+.appmark-details {
+	padding-top:5px;
+}
+
+
+/* #content-mid   .span6
+================================================== */
+
+.output-base64 {
+	padding-bottom:5px;
+}
+
+
+
+/* SYNTAX */
+.output-manifest {
+
+	i.g 	{color:#666;font-style:normal;}
+
+	.syntax {
+		padding:10px;
+		font-family: Monaco, Menlo, Consolas, "Courier New", monospace;font-size:12px;
+		background:#272822;
+		color:#c4cfc3;
+		white-space:pre-wrap;line-height:1.6;
+
+		i.w 	{color:#fff;font-style:normal;}
+		i.y     {color:#e5db82;font-style:normal;}
+	}
+}
+
+
+/* #content-right    .span6
+================================================== */
+
+.steps {margin-left:0px;}
+.step-img {width:90%;margin:0 auto;border:1px solid #c1c1c1;display:block;margin-bottom:10px;}
+
+
+
+
+
+
+/* FOOTER
+================================================== */
+
+#footer {
+	height: auto;margin-top:80px;
+	background-color: #f5f5f5;
+	padding-top:15px;padding-bottom:25px;
+
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+	#footer {
+	margin-left: -20px;
+	margin-right: -20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	}
+}
+

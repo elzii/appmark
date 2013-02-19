@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,6 +49,9 @@
   
 
     <div id="banner" class="hero-unit">
+
+      <img src="img/chrome-ss.png" alt="Chrome Screenshot" class="ss">
+
       <h1><img src="img/appmark-star.png" alt="Appmark">Appmark</h1>
       <p>A tool to generate an "appmark" - a chrome extension serving as a bookmark to a website/app that displays on Chrome's New Tab page.</p>
       <ul>Appmark uses
@@ -58,6 +60,7 @@
         <li><a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a></li>
       </ul>
       <p><a href="#" id="create-appmark" class="btn btn-primary btn-large">Make an Appmark »</a></p>
+      <div style="clear:both"></div>
     </div>
 
 
@@ -349,7 +352,7 @@
 
         //scroll to step 1 and focus field
         $('#create-appmark').click(function(){
-          $("html, body").animate({ scrollTop: 280 }, 300);
+          $("html, body").animate({ scrollTop: 330 }, 300);
           $('#pretty-input').focus();
           return false;
         })
